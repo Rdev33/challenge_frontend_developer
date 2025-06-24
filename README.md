@@ -51,3 +51,52 @@ Vou detalhar as medidas que tomaria até conseguir chegar em um projeto atualiza
 3. Aplicando essa tática em todos os lugares possíveis, deixando o código mais limpo, sei que seria possível mexer na estrutura de diretórios, pois na minha refatoração eu iria fazer com que o código no arquivo não dependesse de códigos que estão em outros arquivos(digo isso por experiência própria, que já vi muito). Fazendo dessa maneira, reduzindo acoplamentos entre códigos, reduzindo linhas dos arquivos cada vez mais, garantindo ainda mais uma boa legibilidade, me sentiria mais confortável e seguro para começar a atualizar a versão das linguagens de programação/frameworks utilizados no projeto, pois pra mim este é um detalhe crucial.
 4. Então a partir do momento que eu tenho linhas de códigos mais enxutas e fácil de entender, eu posso me preocupar em atualizar a versão das stacks utilizadas a fim de usar recursos novos e recomendados abandonando assim certos códigos antigos e obsoletos. Faria isso quando eu tivesse certeza de que eu poderia mudar, refatorar sem quebrar o projeto. O uso da IA constante seria para agilizar todo o processo. Não que possamos confiar totalmente nessas ferramentas, mas com a minha experiência hoje em dia me sinto seguro e sou capaz de analisar bem o conteúdo gerado e concluir se é compátivel ou não.
 5. Todos os passos acima faria parte de um processo demorado e trabalhoso. Mas a príncipio essas seriam as ações que eu tomaria e iria executando até o momento em que chegar em um projeto moderno. E eu também não esqueceria de colocar a aplicação em uma nova arquitetura escalável e flexível para evitar problemas futuros.
+
+**3. Integração com Back-end e APIs:**
+
+*Dada a necessidade de integrar um front-end com várias APIs de diferentes 
+serviços, descreva como você estruturaria o código para facilitar a 
+manutenção e a escalabilidade. Inclua como você lidaria com autenticação e 
+autorização, tratamento de erros, logging e comunicação eficiente entre o 
+front-end e as APIs.*
+
+Para exemplificar a minha ideia, irei simular que estou trabalhando com API de e-commerce utilizando o Next.js. Então vamos "supor" que esta API é real, e possui dois endpoints cujo o objetivo é fornecer informações de produto e disponibilidade do mesmo em lojas físicas próximas. Não estarei criando toda a estrutura e fluxo de uma compra real. O intuito mesmo é apenas mostrar como a minha ideia principal serviria para lidar com diferentes tipos de requisições. Estarei explicando o que cada arquivo faz.
+
+De maneira resumida, meu foco é criar uma função utilitária para chamadas à APIs que também inclua o token de um usuário já autenticado com todas as possíveis verificações e validações, em uma página com server component. Esta seria a estrutura de diretórios do meu projeto next.js(também presente no repositório do git, dentro da pasta "item_3"):
+
+app/\
+-- page.tsx\
+lib/\
+-- api/\
+---- fetcher.ts\
+---- services/\
+------ productService.ts\
+------ productAvailabilityService.ts\
+middlewares/\
+-- auth.ts\
+types/\
+-- external.d.ts
+
+**app/page.tsx** - Uso prático no server component para a obtenção dos dados. Nota-se que faço múltiplas requisições e com tratamento para casos de erros. Mas também seria possível utilizar a função get dentro do service específico de maneira isolada.
+
+**lib/api/productService.ts** - camada responsável por buscar dados do produto.
+
+**lib/api/productAvailabilityService.ts** - camada responsável por buscar informações de disponibilidade do produto em lojas físicas próximas.
+
+**lib/api/fetcher.ts** - arquivo que contém a funcão principal para chamadas em APIs com tratamento de erros e retornos necessários.
+
+**middlewares/auth.ts** - camada responsável para obtenção do access token do usuário autenticado.
+
+**types/external.d.ts** - arquivo para tipagens
+
+Com essa estratégia, é possível realizar diversas requisições de maneira organizada. Quando houver um novo endpoint, basta apenas criar um novo service respectivo utilizando o "fetcher", que por sua vez ja possui o tratamento dos erros e retorno dos dados, necessários.
+
+OBS: Essa não seria a implementação final dado o cenário fictício. Então trata-se de uma solução inicial bem simples, porém aberta a adaptações futuras e com diversas configurações, estratégias de performance, etc. 
+
+
+
+
+
+
+
+
