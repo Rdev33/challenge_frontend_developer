@@ -34,3 +34,20 @@ Em minha concepção, estas seriam as melhores tecnologias para se trabalhar no 
 - Armazenamento de imagens e assets: AWS S3
 - Deploy: Vercel
 - Monitoramento:	Sentry + Vercel Analytics
+
+**2. Manutenção e evolução de projetos**
+
+*Você foi designado para melhorar uma aplicação existente que possui um 
+código legado com alta dívida técnica. Qual seria seu plano de ação para 
+refatorar o código e reduzir a dívida técnica? Detalhe os passos que você 
+seguiria para garantir a qualidade e continuidade da aplicação durante esse 
+processo.*
+
+Todas as vezes em que tive a oportunidade de trabalhar com código legado, foi o suficiente para desejar construir tudo do zero. É sempre a alternativa mais rápida e menos dolorosa, mas isso é algo que tem que ser bem avaliado. Hoje em dia eu analiso bem o quadro, os problemas contidos e o que eu vou poder realizar a seguir. Dependendo da situação, eu pensaria num plano de reconstrução, com certeza. Mas não apenas por ser mais fácil, mas sim para ter um projeto o mais atualizado o possível. O risco de ter um projeto obsoleto são muitos, ainda mais se tratando de brechas de segurança, por exemplo. 
+
+Vou detalhar as medidas que tomaria até conseguir chegar em um projeto atualizado e menos problemático.
+1. Estudaria bastante os arquivos desse projeto. Primeiramente tenho que entender bem o que ocorre, o que o código faz e como faz. Analisaria a estrutura de diretórios e tentaria identificar se segue ou não algum tipo de arquitetura, ou qualquer informação que sirva como um norte para eu poder prosseguir, isso também inclui buscar informações com funcionários/equipe ou revisão da documentação das funcionalidades, pois preciso ter bem definido na minha mente as regras de negócio do sistema.
+2. Após eu ter um bom conhecimento do que se passa em um determinado módulo/funcionalidade(realizaria essas ações com calma, devagar, dando pequenos passos, por partes/módulos), iria provavelmente usar IA para refatorar tal trecho "editável", afim de deixar menos embaralhado, mas fácil de entender, um pouco mais organizado, considerando a versão da linguagem é claro, aplicar a refatoração de fato, onde alteramos o código, mas não o seu funcionamento, sem quebrar, somente no que for necessário. 
+3. Aplicando essa tática em todos os lugares possíveis, deixando o código mais limpo, sei que seria possível mexer na estrutura de diretórios, pois na minha refatoração eu iria fazer com que o código no arquivo não dependesse de códigos que estão em outros arquivos(digo isso por experiência própria, que já vi muito). Fazendo dessa maneira, reduzindo acoplamentos entre códigos, reduzindo linhas dos arquivos cada vez mais, garantindo ainda mais uma boa legibilidade, me sentiria mais confortável e seguro para começar a atualizar a versão das linguagens de programação/frameworks utilizados no projeto, pois pra mim este é um detalhe crucial.
+4. Então a partir do momento que eu tenho linhas de códigos mais enxutas e fácil de entender, eu posso me preocupar em atualizar a versão das stacks utilizadas a fim de usar recursos novos e recomendados abandonando assim certos códigos antigos e obsoletos. Faria isso quando eu tivesse certeza de que eu poderia mudar, refatorar sem quebrar o projeto. O uso da IA constante seria para agilizar todo o processo. Não que possamos confiar totalmente nessas ferramentas, mas com a minha experiência hoje em dia me sinto seguro e sou capaz de analisar bem o conteúdo gerado e concluir se é compátivel ou não.
+5. Todos os passos acima faria parte de um processo demorado e trabalhoso. Mas a príncipio essas seriam as ações que eu tomaria e iria executando até o momento em que chegar em um projeto moderno. E eu também não esqueceria de colocar a aplicação em uma nova arquitetura escalável e flexível para evitar problemas futuros.
