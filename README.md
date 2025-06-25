@@ -114,3 +114,18 @@ Naturalmente, também é importante destacar que o uso do shadcn/ui, apesar de s
 Além disso, o shadcn/ui não possui uma abordagem de tema global nativa como outras bibliotecas (ex: Chakra UI), o que pode exigir um pouco mais de configuração manual para aplicar temas dinâmicos ou modo escuro. Também vale mencionar que, por ser uma abordagem moderna, desenvolvedores menos experientes com Tailwind, Radix UI ou o padrão de variantes, podem precisar de um tempo inicial de adaptação.
 
 Ainda assim, acredito que essas desvantagens são compensadas pela clareza do código, liberdade de personalização e a base sólida para construir um design system sustentável. Com boa comunicação e organização interna, conseguimos aproveitar todo o potencial da biblioteca.
+
+## 5. Testes e qualidade de código
+
+*Você está trabalhando em um projeto onde a qualidade do código é uma 
+prioridade. Descreva como você estruturaria uma pipeline CI/CD para 
+garantir que todo código-fonte produzido seja testado e que sejam 
+introduzidos bugs. Que tipos de testes (unitários, integração, end-to-end) 
+você configuraria, e como garantiria sua eficiência?*
+
+Primeiramente, antes de chegar no serviço que provisiona esta "esteira" com o fluxo de integração e entrega contínua, eu levaria em consideração o desenvolvimento inicial do projeto implementando a tática de TDD(Test-Driven Development) começando pelos testes, depois o desenvolvimento funcional. Então já no desevolvimento local, já começaria do jeito certo. E se tratando de uma aplicação web, onde eu estivesse atuando somente com o front-end, no meu ponto de vista, a melhor solução seria utilizar Jest e Cypress, cada um para um propósito específico. Estes frameworks citados me convence para estar presentes no projeto, devido suas características de robustez e eficiência para conseguirmos efetuar testes precisos de maneira fácil. O Jest seria para testes unitários e integração, quanto ao Cypress, simular o comportamento real do usuário(E2E).
+
+Agora se tratando do fluxo de CI/CD, eu confiaria em utilizar o serviço da Azure Pipelines. É uma das melhores soluções que conheço e que cumpre bem o seu papel de automação para testes, build e deploy. Então sob minha responsabilidade de configurar os testes para rodarem no fluxo, eu me preocuparia e verificaria se testes mais cruciais estariam presentes. É que fica difícil saber o que testar quando o cenário é fictício, mas vamos imaginar uma aplicação em um contexto de e-commerce, o que eu acho importante para testar, para cada nível de teste, seria:
+- Unitário: Funções utilitárias(formatação de data, cálculo de desconto, etc), componentes simples e desacoplados(Botão, Avatar, etc);
+- Integração: Formulários e chamadas à API;
+- E2E: Login, navegação, carrinho de compras, checkout e busca.
