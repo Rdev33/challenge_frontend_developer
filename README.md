@@ -1,6 +1,6 @@
 # Challenge Frontend Developer - RPE
 
-**1. Arquitetura de Front-end**
+## 1. Arquitetura de Front-end
 
 *Você precisa definir a arquitetura de uma nova aplicação web que será 
 utilizada por milhões de usuários do varejo. Descreva a stack de 
@@ -35,7 +35,7 @@ Em minha concepção, estas seriam as melhores tecnologias para se trabalhar no 
 - Deploy: Vercel
 - Monitoramento:	Sentry + Vercel Analytics
 
-**2. Manutenção e evolução de projetos**
+## 2. Manutenção e evolução de projetos
 
 *Você foi designado para melhorar uma aplicação existente que possui um 
 código legado com alta dívida técnica. Qual seria seu plano de ação para 
@@ -52,7 +52,7 @@ Vou detalhar as medidas que tomaria até conseguir chegar em um projeto atualiza
 4. Então a partir do momento que eu tenho linhas de códigos mais enxutas e fácil de entender, eu posso me preocupar em atualizar a versão das stacks utilizadas a fim de usar recursos novos e recomendados abandonando assim certos códigos antigos e obsoletos. Faria isso quando eu tivesse certeza de que eu poderia mudar, refatorar sem quebrar o projeto. O uso da IA constante seria para agilizar todo o processo. Não que possamos confiar totalmente nessas ferramentas, mas com a minha experiência hoje em dia me sinto seguro e sou capaz de analisar bem o conteúdo gerado e concluir se é compátivel ou não.
 5. Todos os passos acima faria parte de um processo demorado e trabalhoso. Mas a príncipio essas seriam as ações que eu tomaria e iria executando até o momento em que chegar em um projeto moderno. E eu também não esqueceria de colocar a aplicação em uma nova arquitetura escalável e flexível para evitar problemas futuros.
 
-**3. Integração com Back-end e APIs:**
+## 3. Integração com Back-end e APIs:
 
 *Dada a necessidade de integrar um front-end com várias APIs de diferentes 
 serviços, descreva como você estruturaria o código para facilitar a 
@@ -93,10 +93,24 @@ Com essa estratégia, é possível realizar diversas requisições de maneira or
 
 OBS: Essa não seria a implementação final dado o cenário fictício. Então trata-se de uma solução inicial bem simples, porém aberta a adaptações futuras e com diversas configurações, estratégias de performance, etc. 
 
+## 4. Design e UX:
 
+*Sua equipe está encarregada de implementar um novo Design System que será 
+usado através de diferentes projetos. Descreva como você abordaria a 
+implementação desse Design System no código front-end, garantindo 
+consistência e facilidade de uso. Quais práticas você adotaria para 
+garantir que o Design System seja flexível o suficiente para suportar 
+futuras evoluções e como você promoveria sua adoção entre os 
+desenvolvedores?*
 
+Para o front-end, eu recomendo fortemente a adoção da biblioteca shadcn/ui, construída sobre o Tailwind CSS. Trata-se de uma solução moderna, altamente flexível e que oferece total controle sobre os componentes da interface. Com a lib conseguimos não apenas acelerar significativamente a construção de layouts com componentes acessíveis e prontos para uso, como também temos liberdade total para customizar estilos e tokens de design(cores, tipografia, espaçamentos e bordas) diretamente no tailwind.config.ts. Isso garante que nossa aplicação mantenha uma consistência visual sólida e aderente ao Design System criado. Além disso, o shadcn/ui permite integrar facilmente tokens de ferramentas de prototipagem como o Figma, e isso é excelente.
 
+Eu não sou da opinião de que para tudo o que vamos fazer, já penso em utilizar serviços de terceiros, libs e frameworks. Há casos e casos. Só que em situações que precisamos desenvolver projetos em menor tempo possível, é super válido utilizar ferramentas que nos fornece muitas coisas prontas e de fácil configuração para tocar o projeto. Com essa lib, ganhamos em produtividade e alta personalização de estilos com Tailwind, além de ter a possibilidade de instalar/utilizar somentes componentes que desejamos, mantendo o projeto limpo. E em necessidade de criar nossos próprios componentes, não teríamos problema em utilizar a lib Storybook que é de fácil utilização e serve para documentar características e comportamentos dos componentes.
 
+Já a minha postura para adotar de fato a lib, eu teria uma boa conversa com o time, informando-os que trabalhar com a lib, não é um bicho de sete cabeças, até porque por exemplo, muitas classes css no tailwind na hora de estilização são bem semânticas, que não é nada tão distante de se trabalhar com CSS puro, conseguimos identificar fácilmente o que cada classe css faz nos elementos. Então acredito que a facilidade oferecida de desenvolvimento, muita praticidade, total controle e personalização, alta integração com bibliotecas modernas(React Hook Form, Zod, Framer Motion, Lucide), CLI para instalar componentes rapidamente, todos essas vantagens contribuem para que possamos entregar uma aplicação de valor com um design consistente.
 
+Naturalmente, também é importante destacar que o uso do shadcn/ui, apesar de suas muitas vantagens, exige um certo nível de maturidade técnica e alinhamento do time. Como os componentes são copiados diretamente para dentro do projeto (em vez de importados via NPM), a responsabilidade pela manutenção e evolução desses componentes passa a ser nossa. Isso pode gerar um pequeno overhead no longo prazo, principalmente se não houver organização clara do Design System ou consistência na forma como os componentes são estendidos.
 
+Além disso, o shadcn/ui não possui uma abordagem de tema global nativa como outras bibliotecas (ex: Chakra UI), o que pode exigir um pouco mais de configuração manual para aplicar temas dinâmicos ou modo escuro. Também vale mencionar que, por ser uma abordagem moderna, desenvolvedores menos experientes com Tailwind, Radix UI ou o padrão de variantes, podem precisar de um tempo inicial de adaptação.
 
+Ainda assim, acredito que essas desvantagens são compensadas pela clareza do código, liberdade de personalização e a base sólida para construir um design system sustentável. Com boa comunicação e organização interna, conseguimos aproveitar todo o potencial da biblioteca.
