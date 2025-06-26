@@ -70,7 +70,7 @@ manutenção e a escalabilidade. Inclua como você lidaria com autenticação e
 autorização, tratamento de erros, logging e comunicação eficiente entre o 
 front-end e as APIs.*
 
-Para exemplificar a minha ideia, irei simular que estou trabalhando com API de e-commerce utilizando o Next.js. Então vamos "supor" que esta API é real, e possui dois endpoints cujo o objetivo é fornecer informações de produto e disponibilidade do mesmo em lojas físicas próximas. Não estarei criando toda a estrutura e fluxo de uma compra real. O intuito mesmo é apenas mostrar como a minha ideia principal serviria para lidar com diferentes tipos de requisições. Estarei explicando o que cada arquivo faz.
+Para exemplificar a minha ideia, irei simular que estou trabalhando com API de e-commerce utilizando o Next.js. Então vamos "supor" que esta API é real, e possui dois endpoints cujo o objetivo é fornecer informações de produto e disponibilidade do mesmo em lojas físicas próximas. Meu intuito é apenas mostrar como a minha ideia principal serviria para lidar com diferentes tipos de requisições. Estarei explicando o que cada arquivo faz.
 
 De maneira resumida, meu foco é criar uma função utilitária para chamadas à APIs que também inclua o token de um usuário já autenticado com todas as possíveis verificações e validações, em uma página com server component. Esta seria a estrutura de diretórios do meu projeto next.js(também presente no repositório do git, dentro da pasta "item_3"):
 
