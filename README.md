@@ -193,7 +193,7 @@ Integra-se com micro frontends, Design Systems e é facilitado a implementação
 ### 8. Segurança
 Permite controle adequado de autenticação, autorização, prevenção de XSS/CSRF com boas práticas.
 
-### 9. Confiabilidade do Proprietário
+### 9. Confiabilidade do proprietário
 Criado e mantido pelo Facebook/Meta, com versões estáveis, roadmap ativo e comunidade engajada.
 
 ### Conclusão
