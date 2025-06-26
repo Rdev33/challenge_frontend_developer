@@ -1,6 +1,6 @@
 # Challenge Frontend Developer - RPE
 
-## 1. Arquitetura de Front-end
+## 1. Arquitetura de Front-end:
 
 *Você precisa definir a arquitetura de uma nova aplicação web que será 
 utilizada por milhões de usuários do varejo. Descreva a stack de 
@@ -35,7 +35,7 @@ Em minha concepção, estas seriam as melhores tecnologias para se trabalhar no 
 - Deploy: Vercel
 - Monitoramento:	Sentry + Vercel Analytics
 
-## 2. Manutenção e evolução de projetos
+## 2. Manutenção e evolução de projetos:
 
 *Você foi designado para melhorar uma aplicação existente que possui um 
 código legado com alta dívida técnica. Qual seria seu plano de ação para 
@@ -113,9 +113,9 @@ Naturalmente, também é importante destacar que o uso do shadcn/ui, apesar de s
 
 Além disso, o shadcn/ui não possui uma abordagem de tema global nativa como outras bibliotecas (ex: Chakra UI), o que pode exigir um pouco mais de configuração manual para aplicar temas dinâmicos ou modo escuro. Também vale mencionar que, por ser uma abordagem moderna, desenvolvedores menos experientes com Tailwind, Radix UI ou o padrão de variantes, podem precisar de um tempo inicial de adaptação.
 
-Ainda assim, acredito que essas desvantagens são compensadas pela clareza do código, liberdade de personalização e a base sólida para construir um design system sustentável. Com boa comunicação e organização interna, conseguimos aproveitar todo o potencial da biblioteca.
+Ainda assim, acredito que essas desvantagens são compensadas pela clareza do código, liberdade de personalização e a base sólida para construir um Design System sustentável. Com boa comunicação e organização interna, conseguimos aproveitar todo o potencial da biblioteca.
 
-## 5. Testes e qualidade de código
+## 5. Testes e qualidade de código:
 
 *Você está trabalhando em um projeto onde a qualidade do código é uma 
 prioridade. Descreva como você estruturaria uma pipeline CI/CD para 
@@ -131,3 +131,60 @@ Agora se tratando do fluxo de CI/CD, eu confiaria em utilizar o serviço da Azur
 - E2E: Login, navegação, carrinho de compras, checkout e busca.
 
 A princípio, esta seria a minha estratégia para assegurar que o projeto funcionasse como esperado, com maior confiabilidade(a nível de desenvolvimento, fazer modificações sem medo) e com mais redução de bugs.
+
+## 6. Adoção de novas tecnologias:
+
+*Sua equipe está considerando adotar um novo framework que promete melhorar 
+a produtividade. Crie um plano para avaliar a viabilidade dessa tecnologia 
+no contexto de um projeto existente. Quais critérios você utilizaria para 
+tomar a decisão e como implementaria uma prova de conceito?*
+
+Antes de mais nada, devemos pensar que o projeto em que estamos trabalhamos é um produto de uma empresa, que é fornecido/vendido, seja lá qual a forma, para clientes. Logo, conclui-se, que são muitos os stakeholders envolvidos no projeto, como nós desenvolvedores mais técnicos, até mais os setores comerciais, diretoria e afins. Por que estou dizendo isso? De primeiro momento, nós que estamos desenvolvendo, com a "mão na massa" no produto, podemos enxergar que vai ser viável atualizar e utilizar uma tecnologia moderna, pois podemos ganhar em produtividade e em muitos os outros pontos, mas será que vai ter impacto positivo para o setor de recrutamento e seleção? Porque aí precisaria contratar novos profissionais que dominam essa tecnologia. É algo para se pensar a respeito, pois nesse caso, não adiantaria de nada se os devs adotassem o uso de Backbone.js(suposição apenas... não que seria o melhor para usar) para obter certos benefícios mas que dificultaria na contratação de profissionais quando precisasse, porque segundo pesquisas, este seria um dos frameworks pouco utilizado, que consequentemente, teria menos desenvolvedores "disponíveis" para atuar com tal tecnologia.
+
+Seguindo essa linha de raciocínio, se de repente for o caso do projeto atual, estiver rodando em cima das tecnologias mais puras(HTML, CSS, Javascript), ou antigas(Jquery), e queremos atualizar o projeto para trabalhar com React, no meu ponto de vista isso sim compensaria, porque seria muito maior a quantidade de desenvolvedores que encontraríamos no mercado, facilitando a contratação. Isto é apenas um exemplo, é claro. Mas o que estou querendo dizer e vale a reflexão, é que decisões são muito importantes e tem que estar alinhadas entre todos os envolvidos do produto.
+
+Agora se esta troca estivesse devidamente alinhada com todos os envolvidos, e pudéssemos trocar de framework, eu me guiaria através destas perguntas:
+
+- É uma tecnologia que possui uma boa documentação?
+- Possuí uma ampla comunidade para suporte em casos de problemas?
+- Como seria a curva de aprendizado? Dominaríamos em pouco tempo?
+- Realmente aumenta a produtividade comparada à stack atual?
+- Ela resolve os principais problemas em aplicações web(mas poderia também ser app mobile ou sistema desktop)?
+- Garante escalabilidade, manutenibilidade e performance na aplicação?
+- É compatível com arquiteturas modernas?
+- Possui recursos o suficiente para garantir que nossa aplicação seja segura?
+- E se o proprietário do framework é confiável onde tem seu produto ativo e bem mantido.
+
+Partindo dessas questões, vamos supor que a aplicação atual utiliza as stacks: HTML, CSS e JQuery, e nosso objetivo fosse adotar o uso de React, esta seria a ideia de PoC que tenho em mente:
+
+### Critérios avaliados:
+
+### 1. Documentação
+Possui documentação oficial clara, moderna e com exemplos práticos.
+
+### 2. Comunidade e suporte
+Ampla base de usuários, comunidade ativa, presença forte em fóruns, eventos e empresas.
+
+### 3. Curva de aprendizado
+Fácil de aprender para quem já conhece JavaScript. Domínio básico possível em poucos dias/semanas.
+
+### 4. Produtividade
+Componentes reutilizáveis, hot reload, e desenvolvimento mais ágil.
+
+### 5. Resolução de problemas reais
+Resolve bem os desafios de SPAs, integração com APIs, formulários complexos, entre outros.
+
+### 6. Escalabilidade, manutenibilidade e performance
+Código modular, organizado, com alta performance (Virtual DOM, otimizações) e fácil manutenção.
+
+### 7. Compatibilidade com arquiteturas modernas
+Integra-se com micro frontends, Design Systems e é facilitado a implementação de design patterns.
+
+### 8. Segurança
+Permite controle adequado de autenticação, autorização, prevenção de XSS/CSRF com boas práticas.
+
+### 9. Confiabilidade do Proprietário
+Criado e mantido pelo Facebook/Meta, com versões estáveis, roadmap ativo e comunidade engajada.
+
+### Conclusão
+A troca para React atende todos os critérios essenciais para garantir a continuidade e evolução do projeto com segurança, produtividade e facilidade de contratação no mercado. A documentação, comunidade, performance e adaptabilidade são pontos fortes desta ferramenta.
