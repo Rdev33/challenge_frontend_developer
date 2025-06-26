@@ -42,6 +42,7 @@ Basicamente estaríamos resolvendo o problema de acesso de enorme volume utiliza
 
 **Diagrama:**
 
+ ![Diagrama arquitetura item 1](item_1/assets/diagrama-arch.png)
 
 
 ## 2. Manutenção e evolução de projetos:
