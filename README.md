@@ -26,13 +26,13 @@ Este framework moderno por si só já é preparado para construções de aplica�
 
 Em minha concepção, estas seriam as tecnologias primordias para se trabalhar no projeto:
 - Construção do layout:	Tailwind e shadcn/ui para agilizar na construção da interface, aproveitar componentes prontos, além de criar o nosso próprio desing system;
-- Gerenciamento de estado global:	Zustand
-- Gerenciamento e validação de formulários:	React Hook Form
-- Autenticação:	NextAuth.js (JWT e logins em redes sociais)
-- Backend/API: Next.js API Routes
-- Banco de dados: PostgreSQL (com prisma ORM)
-- Armazenamento de imagens e assets: AWS S3
-- Monitoramento: Sentry + Vercel Analytics
+- Gerenciamento de estado global:	Zustand;
+- Gerenciamento e validação de formulários:	React Hook Form;
+- Autenticação:	NextAuth.js (JWT e logins em redes sociais);
+- Backend/API: Next.js API Routes;
+- Banco de dados: PostgreSQL (com prisma ORM);
+- Armazenamento de imagens e assets: AWS S3;
+- Monitoramento: Sentry + Vercel Analytics.
 
 **Agora indo mais para o lado de infraestrutura**, apresento a seguinte ideia de arquitetura para que esta aplicação fosse capaz de suportar o acesso de milhões de usuários.\
 Basicamente estaríamos resolvendo o problema de acesso de enorme volume utilizando uma arquitetura de escalabilidade horizontal, com load balancer gerenciando o tráfego para as réplicas dos servidores de APIs, e esses servidores acessariam a camada de banco de dados sobre a implementação da estratégia de "database replication", que consiste garantir redundância e sempre termos os dados do banco disponíveis. Segue o detalhamento breve do fluxo desta arquitetura:
