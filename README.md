@@ -101,7 +101,8 @@ types/\
 
 Com essa estratégia, é possível realizar diversas requisições de maneira organizada. Quando houver um novo endpoint, basta apenas criar um novo service respectivo utilizando o "fetcher", que por sua vez ja possui o tratamento dos erros e retorno dos dados, necessários.
 
-OBS: Essa não seria a implementação final dado o cenário fictício. Então trata-se de uma solução inicial bem simples, porém aberta a adaptações futuras e com diversas configurações, estratégias de performance, etc. 
+OBS: Essa não seria a implementação final dado o cenário fictício. Então trata-se de uma solução inicial bem simples, porém aberta a adaptações futuras e com diversas configurações, estratégias de performance, etc.\
+**Este é só um código exemplo, mas caso queiram testar o código em sua real funcionalidade, eu disponibilizei esse repositório git com um projeto next.js: https://github.com/Rdev33/pokemon_api_service**
 
 ## 4. Design e UX:
 

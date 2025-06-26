@@ -9,15 +9,20 @@ export default async function HomePage() {
 
   if (!productRes.ok || !availabilityRes.ok) {
     return (
-      <main className="p-4 text-red-600">
+      <main style={{ color: 'red' }}>
         <h1>Erro ao carregar dados</h1>
-        <p>{productRes.error?.message || availabilityRes.error?.message}</p>
+        {productRes.error?.message && (
+          <p>{productRes.error.message}</p>
+        )}
+        {availabilityRes.error?.message && (
+          <p>{availabilityRes.error.message}</p>
+        )}
       </main>
     )
   }
 
   return (
-    <main className="p-4">
+    <main>
       <h1>{productRes.data?.name}</h1>
       <p>Preço: R$ {productRes.data?.price}</p>
       <p>

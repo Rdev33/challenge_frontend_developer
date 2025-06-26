@@ -1,7 +1,8 @@
 import { cookies } from 'next/headers';
 
-export function getAccessToken() {
-  const token = cookies().get('token')?.value;
+export async function getAccessToken() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get('token')?.value;
   
   if (!token) {
     console.log('Usuário não autenticado.');
