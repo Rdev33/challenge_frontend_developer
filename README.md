@@ -20,7 +20,7 @@ Um framework para uma aplicação robusta, com certeza eu faria o uso do Next.js
 - Controle de renderização de páginas com SSR e SSG;
 - Roteamento com base em arquivos, tornando ainda mais prático esta funcionalidade que é crucial e sem precisar instalar bibliotecas externas;
 - Suporte de uma comunidade de desenvolvedores bem ampla em caso dos devs enfrentarem problemas durante o desenvolvimento;
-- Na parte de componentização é possível utilizar um design pattern cujo nome é "Compound Pattern", que tem por objetivo de construir componentes de fácil manutenção com alta legibilidade. Até mesmo uma grande e conhecida bibliteca de UI Kit "Chakra UI" se beneficia deste pattern.
+- Na parte de componentização é possível utilizar um design pattern cujo nome é "Compound Pattern", que tem por objetivo de construir componentes de fácil manutenção com alta legibilidade. Até mesmo uma grande e conhecida biblioteca de UI Kit "Chakra UI" se beneficia deste pattern.
 
 Este framework moderno por si só já é preparado para construções de aplicações web escaláveis e flexíveis pelo o que ele tem à oferecer. Implementando todas as funcionalidades essenciais da melhor forma, se guiando pela vasta documentação e todos da equipe estando na mesma "página", conseguiríamos deixar um projeto fácil para dar manutenções, além de acrescentar novas funcionalidades quando precisasse.
 
